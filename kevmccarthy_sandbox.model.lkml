@@ -2,7 +2,8 @@ connection: "bigquery"
 
 view: test_view {
   derived_table: {sql:select 1 as id;;}
-  dimension: id {}
+  # dimension: id {} #testing CI tool with breaking content
+  dimension: id2 {sql:${TABLE}.id;;}#
 }
 explore: test_view {}
 
